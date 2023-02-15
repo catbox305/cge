@@ -10,8 +10,6 @@ except ModuleNotFoundError:
 		from cgepy.codes import *
 		from cgepy import cust
 
-import time
-
 def cs():
 	print("\033[2J")
 	print("\033[H")
@@ -112,17 +110,18 @@ class cge:
 
 class Grid:
 	def __init__(self, ctx=False):
-        if  
+		update()
 		self.ctx = ctx
 		self.sprites = []
-        self.size = int(size)
+        	self.size = int(size)
 		if ctx == False:
-			self.ctx = cge.legacy.creategrid();
+			self.ctx = cge.legacy.creategrid()
 		else:
 			if type(ctx) == list():
 				self.ctx = new
 			elif type(ctz) == Grid:
 				self.ctx = new.ctx
+				self.sprites = new.sprites
 			else:
 				try:
 					self.ctx = new.main
@@ -172,14 +171,17 @@ class Map:
 		else:
 			self.main = map
 	def Paint(self):
+		update()
 		if self.main == '''undefined''':
 			raise cge.Exceptions.MapError("Cannot paint an undefined map.")
 		else:
+			
 			self.ctx = cge.legacy.paint(self.main)
+			self.sprites = []
 			del self.main
 			self.__class__ = Grid
 class Sprite:
-	def __init__(self,pos=0,color=RED):
+	def __init__(self,color=RED,pos=0):
 		self.pos = pos
 		self.color = color
 		self.sprite = color+"  "
