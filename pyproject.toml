@@ -4,6 +4,7 @@ version = "0.6.3"
 description = "Tools for developing graphical programs inside the console."
 authors = ["catbox305 <lion712yt@gmail.com>"]
 readme = "DESC.md"
+license = "Apache-2.0"
 
 [tool.poetry.dependencies]
 python = "^3.8"
