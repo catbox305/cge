@@ -1,13 +1,13 @@
 __version__ = '0.6.3'
 try:
-	from cgePy.cgepy.codes import *
+	from cgePy.cgepy.colors import *
 	from cgePy.cgepy import cust
 except ModuleNotFoundError:
 	try:
-		from cgepy.cgepy.codes import *
+		from cgepy.cgepy.colors import *
 		from cgepy.cgepy import cust
 	except ModuleNotFoundError:
-		from cgepy.codes import *
+		from cgepy.colors import *
 		from cgepy import cust
 
 import time
