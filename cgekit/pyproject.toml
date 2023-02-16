@@ -7,7 +7,8 @@ readme = "DESCRIPTION.md"
 license = "MIT"
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = "^3.8"
+cgepy = "^0.6.3"
 
 
 [build-system]
