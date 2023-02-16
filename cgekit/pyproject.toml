@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "cgekit"
+version = "0.1.0"
+description = "Additional tools for the cgePy library"
+authors = ["catbox305"]
+readme = "DESCRIPTION.md"
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
