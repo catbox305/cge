@@ -9,9 +9,9 @@ except ModuleNotFoundError:
 
 import time
 
-def cs():
-	print("\033[2J")
-	print("\033[H")
+def cs(): #clear-screen
+	print("\033[2J") #Clears screen
+	print("\033[H") #Resets cursor
 
 spritecolor = RED
 background = BLUE
