@@ -1,4 +1,4 @@
-__version__ = '0.6.3'
+__version__ = '0.6.4'
 try:
 	from cgePy.cgepy.colors import *
 except ModuleNotFoundError:
@@ -27,93 +27,64 @@ def update():
 
 update()
 
-class cge:
-	ctx = []
-	class Exceptions:
-		class OutOfRangeError(Exception):
-			pass
-		class MapError(Exception):
-			pass
-	class legacy:
-		def cleargrid():
-			counter=0
+
+
+class Exceptions:
+	class OutOfRangeError(Exception):
+		pass
+	class MapError(Exception):
+		pass
+class legacy:
+	def creategrid():
 			newmap=[]
 			for i in range(gridsize):
 				newmap.append(background+"  ")
 			return newmap
-			
-		def creategrid():
-			counter=0
-			newmap=[]
-			for i in range(gridsize):
-				newmap.append(background+"  ")
-			return newmap
-		def updategrid(grid=""):
-			cs()
-			if grid != "":
-				cm = grid
-				grid = cm
-			if grid == "":
-				raise Exception("cgePy: Error updating grid.\nIf you are trying to paint a map,\nplease try again later (feature currently unavailable)")
-			counter=-1
-			refr=-1
-			cs()
-			for i in range(0,gridsize):
-				counter+=1
-				refr+=1
-				if refr == pr:
-					if refr == gridsize-pr:
-						refr = 1
-						print("")
-					else:
-						print("")
-						refr=0
-				print(grid[counter], end="")
-			print(white+"")
-		def updatepos(newpos):
-			global currentlyin
-			try:
-				cm[currentlyin] = background+"  "
-			except IndexError:
-				pass
-			currentlyin = newpos
-		def movepos(direction):
-			global currentlyin
-			try:
-				cm[gridsize] = background+"  "
-			except IndexError:
-				pass
-			if direction == "up":
-				currentlyin-=pr
-			if direction == "down":
-				currentlyin+=pr
-			if direction == "left":
-				currentlyin-=1
-			if direction == "right":
-				currentlyin+=1
-		def paint(map):
-			map = map.replace(" ","")
-			map = map.replace(",","")
-			map = map.replace("\n","")
-			map = map.replace("BG",background+"  ,")
-			map = map.replace("RE",RED+"  ,")
-			map = map.replace("YE",YELLOW+"  ,")
-			map = map.replace("GR",GREEN+"  ,")
-			map = map.replace("BL",BLUE+"  ,")
-			map = map.replace("CY",CYAN+" ,")
-			map = map.replace("MA",MAGENTA+"  ,")
-			map = map.replace("BB",BLACK+"  ,")
-			map = map.replace("WH",WHITE+"  ,")
-			map = map.replace("RR",RESET+"  ,")
-			map = map.split(",")
-			return map
+	def updategrid(grid=""):
+		cs()
+		if grid != "":
+			cm = grid
+			grid = cm
+		if grid == "":
+			raise Exception
+		counter=-1
+		refr=-1
+		cs()
+		for i in range(0,gridsize):
+			counter+=1
+			refr+=1
+			if refr == pr:
+				if refr == gridsize-pr:
+					refr = 1
+					print("")
+				else:
+					print("")
+					refr=0
+			print(grid[counter], end="")
+		print(white+"")
+	def paint(map):
+		map = map.replace(" ","")
+		map = map.replace(",","")
+		map = map.replace("\n","")
+		map = map.replace("BG",background+"  ,")
+		map = map.replace("RE",RED+"  ,")
+		map = map.replace("YE",YELLOW+"  ,")
+		map = map.replace("GR",GREEN+"  ,")
+		map = map.replace("BL",BLUE+"  ,")
+		map = map.replace("CY",CYAN+" ,")
+		map = map.replace("MA",MAGENTA+"  ,")
+		map = map.replace("BB",BLACK+"  ,")
+		map = map.replace("WH",WHITE+"  ,")
+		map = map.replace("RR",RESET+"  ,")
+		map = map.split(",")
+		return map
 
 class Grid:
 	def __init__(self, ctx="", new=True):
 		self.ctx = ctx
 		self.sprites = []
 		if new == True:
-			self.ctx = cge.legacy.creategrid();
+			self.ctx = legacy.creategrid()
 		else:
 			if new == list():
 				self.ctx = new
@@ -127,7 +98,7 @@ class Grid:
 
 	def clear(self):
 
-		self.ctx = cge.legacy.creategrid()
+		self.ctx = legacy.creategrid()
 		
 	def write(self, pos, new):
 		try:
@@ -135,7 +106,7 @@ class Grid:
 
 		except IndexError:
 			pass
-			raise cge.Exceptions.OutOfRangeError
+			raise Exceptions.OutOfRangeError
 			
 	def swap(self, new):
 		self.ctx = new
@@ -151,13 +122,13 @@ class Grid:
 
 				self.temp[sprite.pos] = sprite.sprite
 
-			cge.legacy.updategrid(self.temp)
+			legacy.updategrid(self.temp)
 
 			del self.temp
 
 		else:
 
-			cge.legacy.updategrid(self.ctx)
+			legacy.updategrid(self.ctx)
 			
 	def Self(self):
 		return self.ctx
@@ -169,9 +140,9 @@ class Map:
 			self.main = map
 	def Paint(self):
 		if self.main == '''undefined''':
-			raise cge.Exceptions.MapError("Cannot paint an undefined map.")
+			raise Exceptions.MapError("Cannot paint an undefined map.")
 		else:
-			self.ctx = cge.legacy.paint(self.main)
+			self.ctx = legacy.paint(self.main)
 			del self.main
 			self.__class__ = Grid
 class Sprite:
@@ -200,30 +171,3 @@ class Sprite:
 			self.Drop(grid)
 	def Remove(self,grid):
 		grid.sprites.remove(self)
-
-class MainSprite:
-	def __init__(self):
-		spritecolor = RED
-	def Color(self,color):
-		spritecolor = color
-	def Move(self,dir):
-		if dir.lower() == "up":
-			cge.legacy.movepos("up")
-		if dir.lower() == "down":
-			cge.legacy.movepos("down")
-		if dir.lower() == "left":
-			cge.legacy.movepos("left")
-		if dir.lower() == "right":
-			cge.legacy.movepos("right")
-	def Drop(self,grid,request=False):
-		if request == False:
-			grid.sprites.append(self)
-		if request == True:
-			grid.sprites.remove(self)
-			self.Drop(grid)
-	def Remove(self,grid):
-		grid.sprites.remove(self)
-MainSprite1 = MainSprite()
-del MainSprite
-MainSprite = MainSprite1
-del MainSprite1
