@@ -33,18 +33,15 @@ class Exceptions:
 	class MapError(Exception):
 		pass
 class legacy:
-	def creategrid():
+	
+	def creategrid() --> list:
 			newmap=[]
 			for i in range(gridsize):
 				newmap.append(background+"  ")
 			return newmap
-	def updategrid(grid=""):
+		
+	def updategrid(grid: list):
 		cs()
-		if grid != "":
-			cm = grid
-			grid = cm
-		if grid == "":
-			raise Exception
 		counter=-1
 		refr=-1
 		cs()
@@ -60,7 +57,8 @@ class legacy:
 					refr=0
 			print(grid[counter], end="")
 		print(white+"")
-	def paint(map):
+		
+	def paint(map: str) --> list:
 		map = map.replace(" ","")
 		map = map.replace(",","")
 		map = map.replace("\n","")
