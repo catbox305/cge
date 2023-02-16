@@ -17,8 +17,6 @@ spritecolor = RED
 background = BLUE
 gridsize = 100
 
-currentlyin = 0
-gridinfo = {}
 global pr
 
 def update():
