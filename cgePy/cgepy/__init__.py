@@ -34,7 +34,7 @@ class Exceptions:
 		pass
 class legacy:
 	
-	def creategrid() --> list:
+	def creategrid() -> list:
 			newmap=[]
 			for i in range(gridsize):
 				newmap.append(background+"  ")
@@ -58,7 +58,7 @@ class legacy:
 			print(grid[counter], end="")
 		print(white+"")
 		
-	def paint(map: str) --> list:
+	def paint(map: str) -> list:
 		map = map.replace(" ","")
 		map = map.replace(",","")
 		map = map.replace("\n","")
