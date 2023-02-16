@@ -78,15 +78,15 @@ class legacy:
 		return map
 
 class Grid:
-	def __init__(self, ctx="", new=True):
+	def __init__(self, ctx="":
 		self.ctx = ctx
 		self.sprites = []
-		if new == True:
+		if ctx == "":
 			self.ctx = legacy.creategrid()
 		else:
-			if new == list():
+			if type(ctx) == list:
 				self.ctx = new
-			elif new == Grid:
+			elif type(ctx) == Grid:
 				self.ctx = new.ctx
 			else:
 				try:
