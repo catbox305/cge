@@ -1,4 +1,4 @@
-__version__ = '0.6.6'
+__version__ = '0.6.7'
 try:
 	from cgePy.cgepy.colors import *
 except ModuleNotFoundError:
@@ -85,7 +85,7 @@ class Grid:
 				self.ctx = legacy.creategrid()
 			elif type(border) == str:
 				self.ctx = legacy.creategrid()
-				for n in range(len(self.ctx)-1):
+				for n in range(len(self.ctx)):
 					if n <= pr-1:
 						self.ctx[n] = border
 					elif n > pr-1 and n < gridsize-pr:
