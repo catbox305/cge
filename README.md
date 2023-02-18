@@ -9,6 +9,6 @@ Though libraries like Pygame offer better graphics, mouse detection, and more, c
 
 Upcoming features include:
 > Text Engine - Full support for text inside grids.
-> Mixed colors - Full support for multicolored tiles in grids.
-> Map Rewrite - Better, friendlier map making.
+> Mixed colors - Full support for multicolored tiles in grids.\
+> Map Rewrite - Better, friendlier map making.\
 > File writing - Support for writing grids and sprites to maps.
