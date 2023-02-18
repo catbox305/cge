@@ -79,12 +79,15 @@ class Grid:
 	def __init__(self, ctx="", border = False):
 		self.ctx = ctx
 		self.sprites = []
+
 		if ctx == "":
 			if border == False:
 				self.ctx = legacy.creategrid()
 			elif type(border) == str:
+				pass
 				
 		else:
+
 			if type(ctx) == list:
 				self.ctx = new
 			elif type(ctx) == Grid:
