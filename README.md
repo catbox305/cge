@@ -8,7 +8,7 @@ Featuring a powerful, but easy-to-use system, you can make full games with cgepy
 Though libraries like Pygame offer better graphics, mouse detection, and more, cgepy is ever growing.
 
 Upcoming features include:
-> Text Engine - Full support for text inside grids.
+> Text Engine - Full support for text inside grids.\
 > Mixed colors - Full support for multicolored tiles in grids.\
 > Map Rewrite - Better, friendlier map making.\
 > File writing - Support for writing grids and sprites to maps.
