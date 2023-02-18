@@ -76,11 +76,14 @@ class legacy:
 		return map
 
 class Grid:
-	def __init__(self, ctx="":
+	def __init__(self, ctx="", border = False):
 		self.ctx = ctx
 		self.sprites = []
 		if ctx == "":
-			self.ctx = legacy.creategrid()
+			if border == False:
+				self.ctx = legacy.creategrid()
+			elif type(border) == str:
+				
 		else:
 			if type(ctx) == list:
 				self.ctx = new
@@ -128,6 +131,7 @@ class Grid:
 			
 	def Self(self):
 		return self.ctx
+		     
 class Map:
 	def __init__(self, map=False):
 		if map==False:
