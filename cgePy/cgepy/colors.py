@@ -1,3 +1,4 @@
+__version__ = '0.6.8'
 INIT = True #DO NOT CHANGE THIS
 if INIT == True:
 	#Define color variables
