@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "cgePy"
-version = "0.6.5"
+version = "0.6.6"
 description = "Tools for developing graphical programs inside the console."
 authors = ["catbox305 <lion712yt@gmail.com>"]
 readme = "README.md"
