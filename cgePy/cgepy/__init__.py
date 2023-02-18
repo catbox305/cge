@@ -84,7 +84,13 @@ class Grid:
 			if border == False:
 				self.ctx = legacy.creategrid()
 			elif type(border) == str:
-				pass
+				self.ctx = legacy.creategrid()
+				for n in range(len(self.ctx)-1):
+					if n >= pr-1:
+						self.ctx[n] = border
+					elif n > pr-1 and n < gridsize-pr-1:
+						if str(n)[1] == str(pr-int(pr-1)) or str(n)[1] == str(pr-1):
+							self.ctx[n] = border
 				
 		else:
 
