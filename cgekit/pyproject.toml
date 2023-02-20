@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "cgekit"
-version = "0.1.0"
+version = "0.1.1"
 description = "Additional tools for the cgePy library"
 authors = ["catbox305"]
 readme = "DESCRIPTION.md"
