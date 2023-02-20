@@ -11,4 +11,4 @@ Though cgepy lacks many things like mouse control support, native keyboard suppo
 > Text Engine - Full support for text inside grids.\
 > Mixed colors - Full support for multicolored tiles in grids.\
 > Map Rewrite - Better, friendlier map making.\
-> File writing - Support for writing grids and sprites to maps.
+> File writing - Support for writing grids and sprites to files.
