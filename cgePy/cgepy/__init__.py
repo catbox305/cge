@@ -7,8 +7,6 @@ except ModuleNotFoundError:
 	except ModuleNotFoundError:
 		from cgepy.colors import *
 
-import time #tf is this here
-
 def cs(): #clear-screen
 	print("\033[2J") #Clears screen
 	print("\033[H") #Resets cursor
