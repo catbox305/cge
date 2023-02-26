@@ -1,4 +1,4 @@
-__version__ = '0.6.8'
+__version__ = '0.6.9'
 try:
 	from cgePy.cgepy.colors import *
 except ModuleNotFoundError:
@@ -9,7 +9,7 @@ except ModuleNotFoundError:
 
 def cs(): #clear-screen
 	print("\033[2J") #Clears screen
-	print("\033[H") #Resets cursor
+	print('\033[0;0H') #Resets cursor
 
 spritecolor = RED
 background = BLUE
@@ -17,19 +17,34 @@ gridsize = 100
 
 global pr
 
+class from_getkey:
+	'''These escape sequences were taken from the getkey module. I didn't find these!'''
+	def __init__(self):
+		up = "\x1b[A"
+		down = "\x1b[B"
+		right = "\x1b[C"
+		left = "\x1b[D"
+
+keys = from_getkey()
+del from_getkey
+
 def update():
 	global pr
 	pr = int(gridsize**0.5)
 
 update()
 
+"Classes"
 
-
+class Output:
+	pass
+""
 class Exceptions:
 	class OutOfRangeError(Exception):
 		pass
 	class MapError(Exception):
 		pass
+""
 class legacy:
 	
 	def creategrid() -> list:
@@ -38,23 +53,14 @@ class legacy:
 				newmap.append(background+"  ")
 			return newmap
 		
-	def updategrid(grid: list):
+	def updategrid(grid):
+		buffer = []
+		for n in range(len(grid)):
+			buffer.append(grid[n])
+			if (n+1) % pr == 0:
+				buffer.append("\n")
 		cs()
-		counter=-1
-		refr=-1
-		cs()
-		for i in range(0,gridsize):
-			counter+=1
-			refr+=1
-			if refr == pr:
-				if refr == gridsize-pr:
-					refr = 1
-					print("")
-				else:
-					print("")
-					refr=0
-			print(grid[counter], end="")
-		print(white+"")
+		print(''.join(buffer), end='')
 		
 	def paint(map: str) -> list:
 		map = map.replace(" ","")
@@ -72,9 +78,10 @@ class legacy:
 		map = map.replace("RR",RESET+"  ,")
 		map = map.split(",")
 		return map
-
+""
 class Grid:
 	def __init__(self, ctx="", border = False):
+		update()
 		self.ctx = ctx
 		self.sprites = []
 
@@ -141,8 +148,9 @@ class Grid:
 			
 	def Self(self):
 		return self.ctx
-		     
+""		     
 class Map:
+
 	def __init__(self, map=False):
 		if map==False:
 			self.main = '''undefined'''
@@ -155,6 +163,7 @@ class Map:
 			self.ctx = legacy.paint(self.main)
 			del self.main
 			self.__class__ = Grid
+""
 class Sprite:
 	def __init__(self,pos=0,color=RED):
 		self.pos = pos
@@ -164,13 +173,13 @@ class Sprite:
 		self.color = color
 		self.sprite = color+"  "
 	def Move(self,dir):
-		if dir.lower() in ["up","w","i"]:
+		if dir.lower() in ["up","w","i","\x1b[A"]:
 			self.pos -= pr
-		if dir.lower() in ["down","s","k"]:
+		if dir.lower() in ["down","s","k","\x1b[B"]:
 			self.pos += pr
-		if dir.lower() in ["left","a","j"]:
+		if dir.lower() in ["left","a","j","\x1b[D"]:
 			self.pos -= 1
-		if dir.lower() in ["right","d","l"]:
+		if dir.lower() in ["right","d","l","\x1b[C"]:
 			self.pos += 1
 
 	def Drop(self,grid,request=False):

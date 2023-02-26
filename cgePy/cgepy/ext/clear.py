@@ -1,4 +1,5 @@
-__version__ = '0.6.8'
+__version__ = '0.6.9'
 
 def clear():
-	print("\x1b[2J\x1b[H")
+	print('\033[2J]')
+	print('\033[0;0H')
