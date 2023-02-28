@@ -1,13 +1,13 @@
 [tool.poetry]
 name = "cgePy"
-version = "0.6.9"
+version = "0.7.0"
 description = "Tools for developing graphical programs inside the console."
 authors = ["catbox305 <lion712yt@gmail.com>"]
 readme = "README.md"
 license = "MIT"
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "^3.6"
 
 
 [build-system]
