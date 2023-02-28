@@ -1,4 +1,4 @@
-### cgepy // 6.8
+### cgepy // 6.9
 ###### A simple graphics engine with no dependencies.
 ***
 Looking for something simple to use? Need to make a simple program quickly? Want to use a reliable package, for once?\
