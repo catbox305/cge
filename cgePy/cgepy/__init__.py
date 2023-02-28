@@ -61,6 +61,7 @@ class legacy:
 				buffer.append("\n")
 		cs()
 		print(''.join(buffer), end='')
+		print("\x1b[0m")
 		
 	def paint(map: str) -> list:
 		map = map.replace(" ","")
