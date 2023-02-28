@@ -1,4 +1,4 @@
-### cgepy // 0.6.8
+### cgepy // 0.7.0
 ###### A simple graphics engine with no dependencies.
 ***
 cgePy, or cge, is a text-based graphics engine that can operate in the console or terminal.\
