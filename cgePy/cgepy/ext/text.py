@@ -10,22 +10,31 @@ except ModuleNotFoundError:
 	except ModuleNotFoundError:
 		from cgepy.colors import *
 		from cgepy.__init__ import *
-
-class _container:
+class empty:
 	pass
-
-class container:
-	def __init__(self):
-		self = _container
-	def empty(self):
-		self = _container()
 
 class Engine:
 	def __init__(self, grid: Grid):
 		self.grid = grid
-		self.bin = container()
-		self.temp = container()
-	def Insert(self, index, content):
+		self.temp = empty()
+	def Insert(self, content, index):
 		self.temp.content = content
-		self.temp.contentlen = len(content)-1
+		self.index = index
+		self.temp.contentlen = len(content)
+		if self.temp.contentlen % 2 != 0:
+			self.temp.content += "  "
+			self.temp.contentlen += 1
+		self.n = 0
+		self.temp.content = list(self.temp.content)
+		self.temp.ready = []
+		for i in range(0, len(self.temp.content), 2):
+			self.temp.ready.append(self.temp.content[i:i + n])
+		for i in self.temp.ready:
+			self.grid
 
+
+
+e = Grid()
+b = Engine(e)
+b.Insert("12345",3)
+e.Update()
