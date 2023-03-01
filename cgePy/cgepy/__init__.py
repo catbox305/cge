@@ -147,6 +147,8 @@ class Grid:
 
 			legacy.updategrid(self.ctx)
 			
+		print("\x1b[0m")
+		
 	def Self(self):
 		return self.ctx
 ""		     
