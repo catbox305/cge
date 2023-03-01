@@ -30,7 +30,8 @@ class Engine:
 		for i in range(0, len(self.temp.content), 2):
 			self.temp.ready.append(self.temp.content[i:i + n])
 		for i in self.temp.ready:
-			self.grid
+			self.grid[n] = self.grid[n].replace("  ",i)
+			n+=1
 
 
 
