@@ -1,5 +1,5 @@
 ### cgepy // 0.7.0
-###### A simple graphics engine with no dependencies.
+###### A simple 8-bit graphics engine with no dependencies.
 ***
 Looking for something simple to use? Need to make a simple program quickly? Want to use a reliable package, for once?\
 cgepy's got you covered.
