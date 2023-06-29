@@ -1,13 +1,14 @@
-__version__ = '0.7.0'
+__version__ = '0.7.1'
 try:
-	from cgePy.cgepy.colors import *
+	from cgepy.cge.colors import *
 except ModuleNotFoundError:
 	try:
-		from cgepy.cgepy.colors import *
+		from cgePy.cge.colors import *
 	except ModuleNotFoundError:
-		from cgepy.colors import *
+		from cge.colors import *
 
 def cs(): #clear-screen
+	'''Use cge.ext.clear instead!\n\nClears the screen.'''
 	print("\033[2J") #Clears screen
 	print('\033[0;0H') #Resets cursor
 
@@ -18,7 +19,7 @@ gridsize = 100
 global pr
 
 class from_getkey:
-	'''These escape sequences were taken from the getkey module. I didn't find these!'''
+	'''These escape sequences were taken from the getkey module. I didn't find them!'''
 	def __init__(self):
 		up = "\x1b[A"
 		down = "\x1b[B"
@@ -46,14 +47,17 @@ class Exceptions:
 		pass
 ""
 class legacy:
-	
+	'''Legacy functions previously used instead of classes.\n\nNote:\nThese functions are still in use. However, they are considered legacy as you do not need to manually call them anymore.'''
+
 	def creategrid() -> list:
-			newmap=[]
-			for i in range(gridsize):
-				newmap.append(background+"  ")
-			return newmap
+		'''Returns an empty grid.'''
+		newmap=[]
+		for i in range(gridsize):
+			newmap.append(background+"  ")
+		return newmap
 		
 	def updategrid(grid):
+		'''Print a grid onto the screen'''
 		buffer = []
 		for n in range(len(grid)):
 			buffer.append(grid[n])
@@ -64,6 +68,7 @@ class legacy:
 		print("\x1b[0m")
 		
 	def paint(map: str) -> list:
+		'''Paint a grid using text.'''
 		map = map.replace(" ","")
 		map = map.replace(",","")
 		map = map.replace("\n","")
@@ -81,6 +86,7 @@ class legacy:
 		return map
 ""
 class Grid:
+
 	def __init__(self, ctx="", border = False):
 		update()
 		self.ctx = ctx

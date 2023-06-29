@@ -1,4 +1,4 @@
-__version__ = '0.7.0'
+__version__ = '0.7.1'
 
 try:
 	from cgePy.cgepy.colors import *
@@ -12,10 +12,12 @@ except ModuleNotFoundError:
 		from cgepy.__init__ import *
 
 class empty:
+	'''An empty class used for higher levels of readability.'''
 	pass
 
-class Engine:
-	def __init__(self, grid: Grid):
+class TextEngine:
+	'''A text engine allowing for text inside grids.'''
+	def __init__(self, grid: Grid) -> TextEngine:
 		self.grid = grid
 		self.temp = empty()
 	def Insert(self, content, index=0):

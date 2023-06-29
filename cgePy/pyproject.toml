@@ -1,8 +1,8 @@
 [tool.poetry]
 name = "cgePy"
-version = "0.7.0"
+version = "0.7.1"
 description = "Tools for developing graphical programs inside the console."
-authors = ["catbox305 <lion712yt@gmail.com>"]
+authors = ["catbox305"]
 readme = "README.md"
 license = "MIT"
 
