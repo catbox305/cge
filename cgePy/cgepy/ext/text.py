@@ -12,7 +12,7 @@ except ModuleNotFoundError:
 		from cgepy.__init__ import *
 
 class empty:
-	'''An empty class used for higher levels of readability.'''
+	'''The name says it all.'''
 	pass
 
 class TextEngine:

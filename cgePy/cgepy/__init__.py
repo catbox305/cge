@@ -1,51 +1,59 @@
 __version__ = '0.7.1'
+
 try:
-	from cgepy.cge.colors import *
+	from cgepy.cgepy.colors import *
 except ModuleNotFoundError:
 	try:
-		from cgePy.cge.colors import *
+		from cgePy.cgepy.colors import *
 	except ModuleNotFoundError:
-		from cge.colors import *
-
-def cs(): #clear-screen
-	'''Use cge.ext.clear instead!\n\nClears the screen.'''
-	print("\033[2J") #Clears screen
-	print('\033[0;0H') #Resets cursor
+		from cgepy.colors import *
 
 spritecolor = RED
 background = BLUE
 gridsize = 100
-
 global pr
 
-class from_getkey:
-	'''These escape sequences were taken from the getkey module. I didn't find them!'''
-	def __init__(self):
-		up = "\x1b[A"
-		down = "\x1b[B"
-		right = "\x1b[C"
-		left = "\x1b[D"
-
-keys = from_getkey()
-del from_getkey
-
+# Internal Functions
+def cs():
+	'''Internal utility for clearing the screen.'''
+	print("\033[2J") #Clears screen
+	print('\033[0;0H') #Resets cursor
 def update():
 	global pr
 	pr = int(gridsize**0.5)
-
 update()
 
-"Classes"
-
+# Classes
+class keys:
+	'''These escape sequences were taken from the getkey module. I didn't find them!'''
+	up = "\x1b[A"
+	down = "\x1b[B"
+	right = "\x1b[C"
+	left = "\x1b[D"
+class Color:
+	"""As of version 7.1, this class is currently unfinished and can not be used.\n\n\nTakes a given string and converts it into a color.\nArguments:\n\tcolor:str\nReturns:\n\tA color object."""
+	def __init__(self, color:str):
+		#self.color=color.replace("BG",background)
+		#self.color=color.replace("RE",RED)
+		#self.color=color.replace("YE",YELLOW)
+		#self.color=color.replace("BG",background)
+		#self.color=color.replace("BG",background)
+		#self.color=color.replace("BG",background)
+		#self.color=color.replace("BG",background)
+		#self.color=color.replace("BG",background)
+		#self.color=color.replace("BG",background)
+		#self.color=color.replace("BG",background)
+		#self.color=color.replace("BG",background)
+		#self.color=color.replace("BG",background)
+		#self.color=color.replace("BG",background)
+		pass
 class Output:
 	pass
-""
 class Exceptions:
 	class OutOfRangeError(Exception):
 		pass
 	class MapError(Exception):
 		pass
-""
 class legacy:
 	'''Legacy functions previously used instead of classes.\n\nNote:\nThese functions are still in use. However, they are considered legacy as you do not need to manually call them anymore.'''
 
@@ -84,7 +92,6 @@ class legacy:
 		map = map.replace("RR",RESET+"  ,")
 		map = map.split(",")
 		return map
-""
 class Grid:
 
 	def __init__(self, ctx="", border = False):
@@ -128,7 +135,6 @@ class Grid:
 			self.ctx[pos] = new
 
 		except IndexError:
-			pass
 			raise Exceptions.OutOfRangeError
 			
 	def swap(self, new):
@@ -155,8 +161,7 @@ class Grid:
 			
 		
 	def Self(self):
-		return self.ctx
-""		     
+		return self.ctx	     
 class Map:
 
 	def __init__(self, map=False):
@@ -171,16 +176,15 @@ class Map:
 			self.ctx = legacy.paint(self.main)
 			del self.main
 			self.__class__ = Grid
-""
 class Sprite:
-	def __init__(self,pos=0,color=RED):
+	def __init__(self, pos=0, color=RED):
 		self.pos = pos
 		self.color = color
 		self.sprite = color+"  "
-	def Color(self,color):
+	def Color(self, color):
 		self.color = color
 		self.sprite = color+"  "
-	def Move(self,dir):
+	def Move(self, dir:str):
 		if dir.lower() in ["up","w","i","\x1b[A"]:
 			self.pos -= pr
 		if dir.lower() in ["down","s","k","\x1b[B"]:
@@ -189,12 +193,13 @@ class Sprite:
 			self.pos -= 1
 		if dir.lower() in ["right","d","l","\x1b[C"]:
 			self.pos += 1
-
-	def Drop(self,grid,request=False):
+	def Drop(self, grid, request=False):
 		if request == False:
 			grid.sprites.append(self)
 		if request == True:
 			grid.sprites.remove(self)
 			self.Drop(grid)
-	def Remove(self,grid):
+	def Remove(self, grid):
 		grid.sprites.remove(self)
+
+# cgePy.cgepy.__init__.py
