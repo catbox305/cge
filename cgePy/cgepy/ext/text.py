@@ -1,4 +1,4 @@
-__version__ = '0.7.1'
+__version__ = '0.7.2'
 
 try:
 	from cgePy.cgepy.colors import *
@@ -17,7 +17,7 @@ class empty:
 
 class TextEngine:
 	'''A text engine allowing for text inside grids.'''
-	def __init__(self, grid: Grid) -> TextEngine:
+	def __init__(self, grid: Grid):
 		self.grid = grid
 		self.temp = empty()
 	def Insert(self, content, index=0):

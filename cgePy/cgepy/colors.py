@@ -1,7 +1,8 @@
-__version__ = '0.7.1'
-INIT = True #DO NOT CHANGE THIS
-if INIT == True:
-	#Define color variables
+__version__ = '0.7.2'
+
+init = True
+if init == True:
+
 	RED='\033[0;41m'
 	YELLOW='\033[1;43m'
 	ORANGE='\033[0;43'

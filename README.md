@@ -1,4 +1,4 @@
-### cgepy // 0.7.1
+### cgepy // 0.7.2
 ##### A lightweight 8-bit graphics engine
 ***
 ###### Documentation: https://cgepy.github.io/docs
