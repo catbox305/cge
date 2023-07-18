@@ -24,36 +24,39 @@ def update():
 update()
 
 # Classes
+
+class Exceptions:
+	class OutOfRangeError(Exception):
+		pass
+	class MapError(Exception):
+		pass
+	class InvalidColorError(Exception):
+		pass
+
 class keys:
 	'''These escape sequences were taken from the getkey module. I didn't find them!'''
 	up = "\x1b[A"
 	down = "\x1b[B"
 	right = "\x1b[C"
 	left = "\x1b[D"
+
 class Color:
-	"""As of version 7.1, this class is currently unfinished and can not be used.\n\n\nTakes a given string and converts it into a color.\nArguments:\n\tcolor:str\nReturns:\n\tA color object."""
-	def __init__(self, color:str):
-		#self.color=color.replace("BG",background)
-		#self.color=color.replace("RE",RED)
-		#self.color=color.replace("YE",YELLOW)
-		#self.color=color.replace("BG",background)
-		#self.color=color.replace("BG",background)
-		#self.color=color.replace("BG",background)
-		#self.color=color.replace("BG",background)
-		#self.color=color.replace("BG",background)
-		#self.color=color.replace("BG",background)
-		#self.color=color.replace("BG",background)
-		#self.color=color.replace("BG",background)
-		#self.color=color.replace("BG",background)
-		#self.color=color.replace("BG",background)
-		pass
+	'''Takes an RGB sequence and converts it into both a background color and text color. .\n\nArguments:\n\tr~int, g~int, b~int\nReturns:\n\tA color object.'''
+	def __init__(self, r:int, g:int, b:int):
+		if (r > 255) or (g > 255) or (b > 255): # Raise exception if an RGB value exceeds 255
+			raise Exceptions.InvalidColor("RGB value cannot exceed 255")
+		r = str()
+		g = str()
+		b = str()
+		self.bgcolor = f"\033[48;2;{r};{g};{b}m"
+		self.textcolor = f"\033[38;2;{r};{g};{b}m"
+	def __str__(self):
+		return self.bgcolor
+
+
 class Output:
 	pass
-class Exceptions:
-	class OutOfRangeError(Exception):
-		pass
-	class MapError(Exception):
-		pass
+
 class legacy:
 	'''Legacy functions previously used instead of classes.\n\nNote:\nThese functions are still in use. However, they are considered legacy as you do not need to manually call them anymore.'''
 
