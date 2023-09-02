@@ -1,4 +1,4 @@
-### cgepy 0.7.2
+### cgepy 0.7.3
 ###### A lightweight console graphics engine.
 ***
 #### Documentation: https://cgepy.github.io/docs
