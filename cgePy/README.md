@@ -1,9 +1,8 @@
-### cgepy // 0.7.2
-##### A lightweight 8-bit graphics engine
+### cge 𝟬.𝟳.𝟯
+###### A lightweight terminal graphics engine.
 ***
-###### Documentation: https://cgepy.github.io/docs
+> For a list of changes in 0.7.3, visit [cgepy.github.io/changelog](https://cgepy.github.io/changelog)
+
 Looking for something simple to use? Want to use a reliable package for once?\
 cgepy's got you covered.
-
-Featuring a powerful, but easy-to-use system, you can make fun games with cgepy.\
-Though cgepy lacks many things like mouse support and native keyboard support, it is ever growing and will soon have so many features in place of those, while maintaining that same speed and reliablility.
+***

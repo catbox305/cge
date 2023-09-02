@@ -1,10 +1,15 @@
 [tool.poetry]
 name = "cgePy"
-version = "0.7.2"
-description = "Tools for developing graphical programs inside the console."
+version = "0.7.3"
+description = "A lightweight terminal graphics engine"
+packages = [
+	{include = "cge"}
+]
 authors = ["catbox305"]
 readme = "README.md"
 license = "MIT"
+repository = "https://github.com/catbox305/cge"
+documentation = "https://cgepy.github.io/docs"
 
 [tool.poetry.dependencies]
 python = "^3.6"
