@@ -81,6 +81,14 @@ class Grid:
 		except IndexError:
 			e = "Grid index out of range"
 			raise Exceptions.GridError(e)
+	def w(self, pos, new):
+		"""Change the color value of a position on the grid."""
+		try:
+			self.ctx[pos[1][0]] = new
+
+		except IndexError:
+			e = "Grid index out of range"
+			raise Exceptions.GridError(e)
 
 	def Update(self, clean = True):
 		"""Prints the grid to the screen using a buffer.\n\nPassing the argument 'false' will disable automatic screen clearing."""
