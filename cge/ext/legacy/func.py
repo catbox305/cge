@@ -1,6 +1,6 @@
-__version__ = "0.7.3"
+__version__ = "1.0.0-pre.1"
 class legacy:
-	"""Deprecated functions deployed by the library before release 0.7.3\nWarning: This class will be dropped by release 0.7.5"""
+	"""Deprecated functions deployed by the library before release 1.0.0-pre.1\nWarning: This class will be dropped by release 1.0.0"""
 
 	def creategrid() -> list:
 		"""Returns an empty grid context."""
