@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "cgePy"
-version = "0.7.3"
+version = "1.0.0 pre"
 description = "A lightweight terminal graphics engine"
 packages = [
 	{include = "cge"}
