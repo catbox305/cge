@@ -1,4 +1,4 @@
-__version__ = "1.0.0-pre1"
+__version__ = "1.0.0-pre.1"
 
 # Import required modules
 
