@@ -1,5 +1,3 @@
-__version__ = "0.7.3"
-
 def out(canvas, clean = True):
 	"""Higher resolution canvas output using unicode half-blocks.\nNote that index zero of your canvas will define the length of all other indexes."""
 

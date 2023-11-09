@@ -1,5 +1,3 @@
-__version__ = '0.7.3'
-
 class Color:
 	'''Takes an RGB sequence and converts it into both a background color and text color.\n\nArguments:\n\tr-int, g-int, b-int\nReturns:\n\tA color object.'''
 	def __init__(self, r:int, g:int, b:int):

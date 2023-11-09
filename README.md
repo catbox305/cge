@@ -1,8 +1,8 @@
-### cgepy 0.7.3
-###### A lightweight console graphics engine.
+### cge 𝟬.𝟳.𝟯
+###### A lightweight terminal graphics engine.
 ***
-#### Documentation: https://cgepy.github.io/docs
-Looking for something simple to use? Want to use a reliable package for once?\
-cgepy's got you covered. 
+> For a list of changes in 0.7.3, visit [cgepy.github.io/changelog](https://cgepy.github.io/changelog)
 
-With an easy-to-use system, you can enhance your console based programs. 
+Looking for something simple to use? Want to use a reliable package for once?\
+cgepy's got you covered.
+***

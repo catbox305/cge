@@ -20,8 +20,6 @@ class TextEngine:
 	def __init__(self, grid: Grid):
 		self.grid = grid
 		self.temp = empty()
-		e = "As of version 0.7.3, standard grid format and colors are no longer supported. We recomment migrating your code to the most recent version. For help, visit https://cgepy.github.io/docs"
-		raise Warning(e)
 	def Insert(self, content, index=0):
 		self.temp.content = content
 		self.index = index
