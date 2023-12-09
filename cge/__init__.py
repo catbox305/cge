@@ -1,11 +1,11 @@
-__version__ = "1.0.0-pre.1"
+__version__ = "0.7.3"
 
 # Import required modules
 
-from colors import Presets
-from _partial import out
-from _exceptions import Exceptions
-from ext import clear
+from .colors import Presets
+from ._partial import out
+from ._exceptions import Exceptions
+from .ext import clear
 
 # Initialize settings
 
@@ -46,16 +46,17 @@ class Grid:
 
 	def Update(self, screenclearing = True):
 		"""Prints the grid to the screen using a buffer."""
+		tmp = self.ctx.copy()
+
 		if self.sprites != []:
-			tmp = self.ctx.copy()
 
 			for sprite in self.sprites:
 				tmp[sprite.pos[1]][sprite.pos[0]] = sprite.color
 
-			out(tmp, screenclearing)
-
-		else:
-			out(self.ctx, screenclearing)  
+		if len(tmp)%2 == 1:
+			tmp.append([Presets.none() for i in range(self.size)])
+		
+		out(tmp, screenclearing)  
 
 class Sprite:
 

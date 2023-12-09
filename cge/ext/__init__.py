@@ -1,4 +1,4 @@
-__version__ = '1.0.0-pre.1'
+__version__ = "0.7.3"
 
 def clear():
 	'''Clears the screen.'''

@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "cgePy"
-version = "1.0.0-pre.1"
+version = "0.7.3"
 description = "A lightweight terminal graphics engine"
 packages = [
 	{include = "cge"}
@@ -12,7 +12,7 @@ repository = "https://github.com/catbox305/cge"
 documentation = "https://cgepy.github.io/docs"
 
 [tool.poetry.dependencies]
-python = "^3.6"
+python = "^3.7"
 
 
 [build-system]

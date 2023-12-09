@@ -1,6 +1,7 @@
 class Color:
-	'''Takes an RGB sequence and converts it into both a background color and text color.\n\nArguments:\n\tr-int, g-int, b-int\nReturns:\n\tA color object.'''
-	def __init__(self, r:int, g:int, b:int):
+	'''Takes an RGB sequence and converts it into both a background color and text color. Leave blank for no color.\n\nArguments:\n\tr-int, g-int, b-int, alpha-bool\nReturns:\n\tA color object.'''
+
+	def __init__(self, r:int, g:int, b:int, alpha:bool=False):
 
 		if (r > 255) or (g > 255) or (b > 255): # Raise exception if an RGB value exceeds 255
 			raise Exception("RGB values cannot exceed 255")
@@ -8,8 +9,14 @@ class Color:
 		self.r = str(r)
 		self.g = str(g)
 		self.b = str(b)
-		self.background = f"\033[48;2;{r};{g};{b}m"
-		self.fore = f"\033[38;2;{r};{g};{b}m"
+
+		if alpha == False:
+			self.background = f"\033[48;2;{r};{g};{b}m"
+			self.fore = f"\033[38;2;{r};{g};{b}m"
+		else:
+			self.background = ""
+			self.fore = ""
+
 	
 
 class Presets:
@@ -20,3 +27,4 @@ class Presets:
 	def blue(): return Color(0,0,200)
 	def magenta(): return Color(200,0,200)
 	def white(): return Color(200,200,200)
+	def none(): return Color(0,0,0,True)
