@@ -8,7 +8,7 @@ Looking for a simple, lightweight package? Easily managable features?
 cgepy will handle that, with a sturdy system to build interfaces on top of.
 ***
 Current features:
-* A flexible grid system where you can swap between multiple canvases.
+* A flexible grid system where you can swap between multiple GUIs.
 * Custom coloring that is applicable to all text
 * Higher resolution display capabilities vs. colored unicode full blocks.
 * A basic sprite system for easier manipulation of the canvas.
@@ -19,4 +19,4 @@ Upcoming features:
 * Text will be added back as a more integrated feature that will come built into the existing grid framework.
 
 ***
-###### Note: cgepy has not been tested on windows, and  coloring may not appear due to how powershell handles ansi. This can be fixed via the colorama library. 
+###### Note: cgepy has not been tested on windows.
